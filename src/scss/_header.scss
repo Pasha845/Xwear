@@ -1,0 +1,56 @@
+@import '_variables.scss';
+
+.header {
+  padding-top: 33px;
+  padding-bottom: 33px;
+  color: $white;
+  background: $dark;
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__margin-link:not(:last-child) {
+    margin-right: 48px;
+  }
+
+  &__link {
+    font-family: 'RFDewiExtended', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__margin-icon:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  &__price,
+  &__quantity {
+    font-family: 'CeraPro', sans-serif;
+    font-weight: 700;
+  }
+
+  &__price {
+    margin-left: 6px;
+    margin-right: 5px;
+    font-size: 13px;
+    line-height: 10px;
+    color: #8C8F96;
+  }
+
+  &__quantity {
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 3px;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    background: #49D0FF;
+  }
+
+  &__logo:focus,
+  &__link:focus,
+  &__icon:focus {
+    outline: none;
+  }
+}
