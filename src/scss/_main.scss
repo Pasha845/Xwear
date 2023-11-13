@@ -1,0 +1,153 @@
+@import '_variables.scss';
+
+/* hero */
+
+.hero {
+  padding-top: 49px;
+
+  &__slider {
+    max-width: 1541px;
+  }
+
+  &__slide {
+    position: relative;
+    border-radius: 7px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 98px;
+    padding-bottom: 176px;
+    max-width: 1541px;
+    background-image: url("../img/hero.avif");
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    max-width: 571px;
+    font-size: 51px;
+    font-weight: 900;
+    line-height: 63px;
+    text-transform: uppercase;
+    color: #171819;
+  }
+
+  &__text {
+    margin-bottom: 19px;
+    max-width: 535px;
+    font-family: 'RFDewiExtended', sans-serif;
+    font-size: 19px;
+    line-height: 32px;
+    color: $dark;
+  }
+
+  &__link {
+    border-radius: 5px;
+    padding: 23px 27px;
+    width: 198px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $white;
+    background: $dark;
+    svg {
+      margin-left: 23px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 5;
+    bottom: 47px;
+    border: none;
+    padding: 0;
+    color: $white;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__btn:focus {
+    outline: none;
+  }
+
+  &__prev {
+    left: 90px;
+  }
+
+  &__next {
+    left: 170px;
+  }
+
+  &__dis {
+    color: #F0F2F7;
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 5;
+    right: 75px;
+    bottom: 234px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    &__slide {
+      background-image: url("../img/hero.webp");
+    }
+  }
+}
+
+/* shoes */
+
+.shoes {
+  padding-top: 80px;
+}
+
+/* blog */
+
+.blog {
+  padding-bottom: 118px;
+
+  &__div {
+    margin-bottom: 33px;
+  }
+
+  &__slider {
+    margin-bottom: 67px;
+  }
+
+  &__subtitle {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $dark;
+  }
+
+  &__text {
+    margin-bottom: 13px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #303030;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__link:focus {
+    outline: none;
+  }
+
+  &__date {
+    font-size: 11px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #8C8F96;
+  }
+}
