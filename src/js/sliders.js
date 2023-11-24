@@ -5,11 +5,10 @@ const heroSlider = new Swiper('.hero__slider', {
   navigation: {
     prevEl: ".hero__prev",
     nextEl: ".hero__next",
-    disabledClass: "hero__dis"
+    disabledClass: "slider-dis"
   },
   pagination: {
-    el: ".hero__pagination",
-    clickable: true
+    el: ".hero__pag"
   },
   scrollbar: {
     hide: true
@@ -21,17 +20,19 @@ const heroSlider = new Swiper('.hero__slider', {
 const shoesSlider = new Swiper('.shoes__slider', {
   slidesPerView: 4,
   spaceBetween: 30,
-  pagination: {
-    el: ".shoes__pagination",
-    clickable: true
-  },
   navigation: {
     prevEl: ".shoes__prev",
     nextEl: ".shoes__next",
-    disabledClass: "shoes__dis"
+    disabledClass: "slider-dis"
+  },
+  pagination: {
+    el: ".shoes__pag"
   },
   scrollbar: {
     hide: true
+  },
+  1300: {
+    slidesPerView: 2
   }
 });
 
@@ -40,14 +41,13 @@ const shoesSlider = new Swiper('.shoes__slider', {
 const clothSlider = new Swiper('.cloth__slider', {
   slidesPerView: 4,
   spaceBetween: 30,
-  pagination: {
-    el: ".cloth__pagination",
-    clickable: true
-  },
   navigation: {
     prevEl: ".cloth__prev",
     nextEl: ".cloth__next",
-    disabledClass: "cloth__dis"
+    disabledClass: "slider-dis"
+  },
+  pagination: {
+    el: ".cloth__pag"
   },
   scrollbar: {
     hide: true
@@ -59,14 +59,13 @@ const clothSlider = new Swiper('.cloth__slider', {
 const accessoriesSlider = new Swiper('.accessories__slider', {
   slidesPerView: 4,
   spaceBetween: 30,
-  pagination: {
-    el: ".accessories__pagination",
-    clickable: true
-  },
   navigation: {
     prevEl: ".accessories__prev",
     nextEl: ".accessories__next",
-    disabledClass: "accessories__dis"
+    disabledClass: "slider-dis"
+  },
+  pagination: {
+    el: ".accessories__pag"
   },
   scrollbar: {
     hide: true
@@ -78,14 +77,13 @@ const accessoriesSlider = new Swiper('.accessories__slider', {
 const blogSlider = new Swiper('.blog__slider', {
   slidesPerView: 3,
   spaceBetween: 31,
-  pagination: {
-    el: ".blog__pagination",
-    clickable: true
-  },
   navigation: {
     prevEl: ".blog__prev",
     nextEl: ".blog__next",
-    disabledClass: "blog__dis"
+    disabledClass: "slider-dis"
+  },
+  pagination: {
+    el: ".blog__pag"
   },
   scrollbar: {
     hide: true

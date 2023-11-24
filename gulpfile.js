@@ -16,10 +16,15 @@ const clean = () => {
   return del('dist')
 };
 
-const resources = () => {
-  return src('src/resources/**')
-    .pipe(dest('dist'))
+const fonts = () => {
+  return src('src/fonts/**')
+    .pipe(dest('dist/fonts'))
 };
+
+const ico = () => {
+  return src('src/img/favicon.ico')
+    .pipe(dest('dist/img'));
+}
 
 const html = () => {
   return src('src/**/*.html')
@@ -74,7 +79,7 @@ const styles = () => {
     .pipe(cleanCSS({
       level: 2
     }))
-    .pipe(dest('dist/css'))
+    .pipe(dest('dist/css'));
 };
 
 const scripts = () => {
@@ -86,7 +91,7 @@ const scripts = () => {
       toplevel: true
     }
     ).on('error', notify.onError))
-    .pipe(dest('dist/js'))
+    .pipe(dest('dist/js'));
 };
 
 const avifImages = () => {
@@ -98,7 +103,7 @@ const avifImages = () => {
 const webpImages = () => {
   return src('src/img/webp/*.png')
     .pipe(imagewebp())
-    .pipe(dest('dist/img'))
+    .pipe(dest('dist/img'));
 };
 
 const watchFiles = () => {
@@ -106,11 +111,11 @@ const watchFiles = () => {
     server: {
       baseDir: 'dist'
     }
-  })
+  });
 };
 
 watch('src/**/*.html', html);
 watch('src/scss/*.scss', css);
 watch('src/js/*.js', js);
-exports.dev = series(clean, resources, html, css, js, avif, webp, watchFiles);
-exports.build = series(clean, resources, htmlMinify, styles, scripts, avifImages, webpImages);
+exports.dev = series(clean, fonts, html, css, js, ico, avif, webp, watchFiles);
+exports.build = series(clean, fonts, htmlMinify, styles, scripts, ico, avifImages, webpImages);
