@@ -5,10 +5,6 @@
 .hero {
   padding-top: 49px;
 
-  &__slider {
-    max-width: 1541px;
-  }
-
   &__slide {
     position: relative;
     border-radius: 7px;
@@ -16,7 +12,6 @@
     padding-right: 90px;
     padding-top: 98px;
     padding-bottom: 176px;
-    max-width: 1541px;
     background-image: url("../img/hero.avif");
     background-repeat: no-repeat;
   }
@@ -82,11 +77,12 @@
     color: #F0F2F7;
   }
 
-  &__pagination {
+  &__pag {
     position: absolute;
     z-index: 5;
     right: 75px;
     bottom: 234px;
+    text-align: right;
   }
 }
 
@@ -102,6 +98,64 @@
 
 .shoes {
   padding-top: 80px;
+}
+
+/* price */
+
+.price {
+  color: $white;
+
+  &__container {
+    border-radius: 7px;
+    padding: 98px 90px;
+    padding-bottom: 84px;
+    max-width: 1541px;
+    background: linear-gradient(267deg, #0D99F8 0.94%, #21A0F8 5.36%, #54B5FF 27.35%, #0DBBF8 79%, #0DDBF8 97.53%);
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    max-width: 571px;
+    font-size: 51px;
+    font-weight: 900;
+    line-height: 63px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    max-width: 738px;
+    font-size: 19px;
+    line-height: 32px;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__div {
+    margin-bottom: 41px;
+  }
+
+  &__subtext {
+    max-width: 258px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  &__link {
+    border-radius: 5px;
+    padding: 23px 27px;
+    width: 295px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+    background: $dark;
+    svg {
+      margin-left: 23px;
+    }
+  }
 }
 
 /* blog */

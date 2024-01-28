@@ -11,13 +11,30 @@
   }
 
   &__margin-link:not(:last-child) {
-    margin-right: 48px;
+    margin-right: 61px;
   }
 
   &__link {
+    position: relative;
     font-family: 'RFDewiExtended', sans-serif;
     font-size: 14px;
     font-weight: 600;
+  }
+
+  &__margin-link:not(:nth-child(5)) &__link::after {
+    position: absolute;
+    top: 5px;
+    right: -13px;
+    content: "";
+    display: inline-block;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    width: 5px;
+    height: 5px;
+    opacity: 0.3;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    transform-origin: center;
   }
 
   &__margin-icon:not(:last-child) {
@@ -52,5 +69,13 @@
   &__link:focus,
   &__icon:focus {
     outline: none;
+  }
+}
+
+@media (max-width: 1260px) {
+  .header {
+    &__menu {
+      display: none;
+    }
   }
 }

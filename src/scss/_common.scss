@@ -221,23 +221,36 @@ p, h1, h2, h3, h4 {
   color: #3C3C3C;
 }
 
-.slider__elements {
+.slider-elements {
+  margin: 0 auto;
   justify-content: center;
   width: 265px;
 }
 
-.btn {
+.slider-btn {
   flex-shrink: 0;
   border: none;
+  padding: 0;
   background: none;
   cursor: pointer;
 }
 
-.hero__dis,
-.shoes__dis,
-.cloth__dis,
-.accessories__dis,
-.blog__dis {
+.slider-pag {
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  margin-right: 15px;
+  width: 10px;
+  height: 10px;
+  background: #354965;
+}
+
+.swiper-pagination-bullet-active {
+  background: $dark;
+}
+
+.slider-dis {
   opacity: 0.3;
   pointer-events: none;
   cursor: auto;
