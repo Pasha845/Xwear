@@ -1,4 +1,685 @@
-@import '_common.scss';
-@import '_header.scss';
-@import '_main.scss';
-@import '_footer.scss';
+button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15}body{margin:0}details,main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=search]{outline-offset:-2px}summary{display:list-item}[hidden],template{display:none}
+
+$white: #FFF;
+$dark: #121214;
+$black: #000;
+
+@font-face {
+  font-family: 'RFDewiExpanded';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExpanded-Black.woff2') format('woff2'),
+    url('../fonts/RFDewiExpanded-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExpanded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExpanded-Bold.woff2') format('woff2'),
+    url('../fonts/RFDewiExpanded-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExpanded';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExpanded-Semibold.woff2') format('woff2'),
+    url('../fonts/RFDewiExpanded-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExpanded';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExpanded-Ultrabold.woff2') format('woff2'),
+    url('../fonts/RFDewiExpanded-Ultrabold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExtended';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExtended-Black.woff2') format('woff2'),
+    url('../fonts/RFDewiExtended-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExtended';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExtended-Bold.woff2') format('woff2'),
+    url('../fonts/RFDewiExtended-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExtended';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExtended-Semibold.woff2') format('woff2'),
+    url('../fonts/RFDewiExtended-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'RFDewiExtended';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/RFDewiExtended-Ultrabold.woff2') format('woff2'),
+    url('../fonts/RFDewiExtended-Ultrabold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'CeraPro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(""),
+    url('../fonts/CeraPro-Bold.woff2') format('woff2'),
+    url('../fonts/CeraPro-Bold.woff') format('woff');
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'RFDewiExpanded', sans-serif;
+  font-size: 16px;
+  color: $black;
+  background: $white;
+}
+
+p, h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  max-width: 1420px;
+}
+
+.reset {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.flex,
+.center,
+.between,
+.column {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.div {
+  margin-bottom: 38px;
+}
+
+.title {
+  font-size: 31px;
+  font-weight: 900;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: $dark;
+}
+
+.link {
+  border-bottom: 2px solid $dark;
+  font-family: 'RFDewiExtended', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: $black;
+  svg {
+    margin-left: 10px;
+  }
+}
+
+.slider {
+  margin-bottom: 60px;
+}
+
+.slide {
+  position: relative;
+}
+
+.favorite {
+  position: absolute;
+  top: 33px;
+  right: 25px;
+}
+
+.cube {
+  font-family: 'RFDewiExtended', sans-serif;
+}
+
+.subtitle {
+  margin-bottom: 3px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 20px;
+  color: #3C3C3C;
+}
+
+.slider-elements {
+  margin: 0 auto;
+  justify-content: center;
+  width: 265px;
+}
+
+.slider-btn {
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.slider-pag {
+  text-align: center;
+  .swiper-pagination-bullet {
+    margin-right: 15px;
+    width: 10px;
+    height: 10px;
+    background: #354965;
+  }
+}
+
+.slider-pag .swiper-pagination-bullet-active {
+  background: $dark;
+}
+
+.slider-dis {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: auto;
+}
+
+.none {
+  display: none;
+}
+
+.link:focus,
+.favorite:focus {
+  outline: none;
+}
+
+@media (max-width: 1260px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .padding {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .none {
+    display: block;
+  }
+
+  .block {
+    display: none;
+  }
+}
+
+/* header */
+
+.header {
+  padding-top: 33px;
+  padding-bottom: 33px;
+  color: $white;
+  background: $dark;
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__margin-link:not(:last-child) {
+    margin-right: 61px;
+  }
+
+  &__link {
+    position: relative;
+    font-family: 'RFDewiExtended', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__margin-link:not(:nth-child(5)) &__link::after {
+    position: absolute;
+    top: 5px;
+    right: -13px;
+    content: "";
+    display: inline-block;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    width: 5px;
+    height: 5px;
+    opacity: 0.3;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    transform-origin: center;
+  }
+
+  &__margin-icon:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  &__price,
+  &__quantity {
+    font-family: 'CeraPro', sans-serif;
+    font-weight: 700;
+  }
+
+  &__price {
+    margin-left: 6px;
+    margin-right: 5px;
+    font-size: 13px;
+    line-height: 10px;
+    color: #8C8F96;
+  }
+
+  &__quantity {
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 3px;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    background: #49D0FF;
+  }
+
+  &__logo:focus,
+  &__link:focus,
+  &__icon:focus {
+    outline: none;
+  }
+}
+
+@media (max-width: 1260px) {
+  .header {
+    &__menu {
+      display: none;
+    }
+  }
+}
+
+/* hero */
+
+.hero {
+  padding-top: 49px;
+
+  &__slide {
+    position: relative;
+    border-radius: 7px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 98px;
+    padding-bottom: 176px;
+    background-image: url("../img/hero.avif");
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    max-width: 571px;
+    font-size: 51px;
+    font-weight: 900;
+    line-height: 63px;
+    text-transform: uppercase;
+    color: #171819;
+  }
+
+  &__text {
+    margin-bottom: 19px;
+    max-width: 535px;
+    font-family: 'RFDewiExtended', sans-serif;
+    font-size: 19px;
+    line-height: 32px;
+    color: $dark;
+  }
+
+  &__link {
+    border-radius: 5px;
+    padding: 23px 27px;
+    width: 198px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $white;
+    background: $dark;
+    svg {
+      margin-left: 23px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 5;
+    bottom: 47px;
+    border: none;
+    padding: 0;
+    color: $white;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__btn:focus {
+    outline: none;
+  }
+
+  &__prev {
+    left: 90px;
+  }
+
+  &__next {
+    left: 170px;
+  }
+
+  &__dis {
+    color: #F0F2F7;
+  }
+
+  &__pag {
+    position: absolute;
+    z-index: 5;
+    right: 75px;
+    bottom: 240px;
+    text-align: center;
+    .swiper-pagination-bullet {
+      margin-right: 15px;
+      width: 10px;
+      height: 10px;
+      background: #354965;
+    }
+  }
+
+  &__pag .swiper-pagination-bullet-active {
+    background: $dark;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    &__slide {
+      background-image: url("../img/hero.webp");
+    }
+  }
+}
+
+/* shoes */
+
+.shoes {
+  padding-top: 80px;
+}
+
+/* price */
+
+.price {
+  color: $white;
+
+  &__container {
+    border-radius: 7px;
+    padding: 98px 90px;
+    padding-bottom: 84px;
+    max-width: 1541px;
+    background: linear-gradient(267deg, #0D99F8 0.94%, #21A0F8 5.36%, #54B5FF 27.35%, #0DBBF8 79%, #0DDBF8 97.53%);
+  }
+
+  &__title {
+    margin-bottom: 19px;
+    max-width: 571px;
+    font-size: 51px;
+    font-weight: 900;
+    line-height: 63px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    max-width: 738px;
+    font-size: 19px;
+    line-height: 32px;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &__div {
+    margin-bottom: 41px;
+  }
+
+  &__subtext {
+    max-width: 258px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+
+  &__link {
+    border-radius: 5px;
+    padding: 23px 27px;
+    width: 295px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 20px;
+    text-transform: uppercase;
+    background: $dark;
+    svg {
+      margin-left: 23px;
+    }
+  }
+}
+
+/* blog */
+
+.blog {
+  padding-bottom: 118px;
+
+  &__div {
+    margin-bottom: 33px;
+  }
+
+  &__slider {
+    margin-bottom: 67px;
+  }
+
+  &__subtitle {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $dark;
+  }
+
+  &__text {
+    margin-bottom: 13px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #303030;
+  }
+
+  &__link {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__link:focus {
+    outline: none;
+  }
+
+  &__date {
+    font-size: 11px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #8C8F96;
+  }
+}
+
+/* footer */
+
+.footer {
+  padding-top: 45px;
+  padding-bottom: 51px;
+  font-family: 'RF Dewi Extended', sans-serif;
+  color: $white;
+  background: $dark;
+
+  &__list:not(:last-child) {
+    margin-right: 212px;
+  }
+
+  &__margin-link:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+  &__subtitle {
+    font-family: 'RF Dewi Expanded', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 28px;
+    color: #DCDCE0;
+  }
+
+  &__margin-logo {
+    margin-top: 58px;
+  }
+
+  &__margin-sublogo {
+    margin-top: 38px;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 28px;
+    color: #DCDCE0;
+  }
+
+  &__form {
+    border-bottom: 1px solid $white;
+    margin-bottom: 15px;
+    width: 268px;
+  }
+
+  &__input {
+    border: none;
+    padding: 0;
+    padding-bottom: 7px;
+    caret-color: $white;
+    color: $white;
+    background: none;
+  }
+
+  &__input::placeholder {
+    font-size: 13px;
+    line-height: 28px;
+    opacity: 0.6;
+  }
+
+  &__btn {
+    border: none;
+    padding: 0;
+    background: none;
+  }
+
+  &__subtext {
+    margin-bottom: 51px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $white;
+    opacity: 0.4;
+  }
+
+  &__sublink {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #707076;
+  }
+
+  &__link:focus,
+  &__logo:focus,
+  &__input:focus {
+    outline: none;
+  }
+}
