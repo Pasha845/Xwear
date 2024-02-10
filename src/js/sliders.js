@@ -18,7 +18,7 @@ const heroSlider = new Swiper('.hero__slider', {
 /* shoes */
 
 const shoesSlider = new Swiper('.shoes__slider', {
-  slidesPerView: 4,
+  slidesPerView: "auto",
   spaceBetween: 30,
   navigation: {
     prevEl: ".shoes__prev",
@@ -31,15 +31,23 @@ const shoesSlider = new Swiper('.shoes__slider', {
   scrollbar: {
     hide: true
   },
-  1300: {
-    slidesPerView: 2
+  breakpoints: {
+    630: {
+      slidesPerView: 1
+    },
+    668: {
+      slidesPerView: 3
+    },
+    1300: {
+      slidesPerView: 4
+    }
   }
 });
 
 /* cloth */
 
 const clothSlider = new Swiper('.cloth__slider', {
-  slidesPerView: 4,
+  slidesPerView: "auto",
   spaceBetween: 30,
   navigation: {
     prevEl: ".cloth__prev",
@@ -51,13 +59,24 @@ const clothSlider = new Swiper('.cloth__slider', {
   },
   scrollbar: {
     hide: true
+  },
+  breakpoints: {
+    630: {
+      slidesPerView: 1
+    },
+    668: {
+      slidesPerView: 3
+    },
+    1300: {
+      slidesPerView: 4
+    }
   }
 });
 
 /* accessories */
 
 const accessoriesSlider = new Swiper('.accessories__slider', {
-  slidesPerView: 4,
+  slidesPerView: "auto",
   spaceBetween: 30,
   navigation: {
     prevEl: ".accessories__prev",
@@ -69,13 +88,24 @@ const accessoriesSlider = new Swiper('.accessories__slider', {
   },
   scrollbar: {
     hide: true
+  },
+  breakpoints: {
+    630: {
+      slidesPerView: 1
+    },
+    668: {
+      slidesPerView: 3
+    },
+    1300: {
+      slidesPerView: 4
+    }
   }
 });
 
 /* blog */
 
 const blogSlider = new Swiper('.blog__slider', {
-  slidesPerView: 3,
+  slidesPerView: "auto",
   spaceBetween: 31,
   navigation: {
     prevEl: ".blog__prev",
@@ -87,5 +117,16 @@ const blogSlider = new Swiper('.blog__slider', {
   },
   scrollbar: {
     hide: true
+  },
+  breakpoints: {
+    630: {
+      slidesPerView: 1
+    },
+    668: {
+      slidesPerView: 2
+    },
+    1300: {
+      slidesPerView: 3
+    }
   }
 });
