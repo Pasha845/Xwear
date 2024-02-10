@@ -112,9 +112,14 @@ a {
 
 img,
 svg {
+  flex-shrink: 0;
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
+}
+
+picture {
+  flex-shrink: 0;
 }
 
 body {
@@ -133,7 +138,7 @@ p, h1, h2, h3, h4 {
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
-  max-width: 1420px;
+  max-width: 1540px;
 }
 
 .reset {
@@ -307,6 +312,11 @@ p, h1, h2, h3, h4 {
     font-family: 'RFDewiExtended', sans-serif;
     font-size: 14px;
     font-weight: 600;
+    transition: color .3s;
+  }
+
+  &__link:hover {
+    color: #0DBBF8;
   }
 
   &__margin-link:not(:nth-child(5)) &__link::after {
@@ -327,6 +337,14 @@ p, h1, h2, h3, h4 {
 
   &__margin-icon:not(:last-child) {
     margin-right: 32px;
+  }
+
+  &__icon {
+    transition: color .3s;
+  }
+
+  &__icon:hover {
+    color: #49D0FF;
   }
 
   &__price,
@@ -376,8 +394,7 @@ p, h1, h2, h3, h4 {
   &__slide {
     position: relative;
     border-radius: 7px;
-    padding-left: 90px;
-    padding-right: 90px;
+    padding: 0;
     padding-top: 98px;
     padding-bottom: 176px;
     background-image: url("../img/hero.avif");
@@ -385,6 +402,7 @@ p, h1, h2, h3, h4 {
   }
 
   &__title {
+    margin-left: 60px;
     margin-bottom: 19px;
     max-width: 571px;
     font-size: 51px;
@@ -395,6 +413,7 @@ p, h1, h2, h3, h4 {
   }
 
   &__text {
+    margin-left: 60px;
     margin-bottom: 19px;
     max-width: 535px;
     font-family: 'RFDewiExtended', sans-serif;
@@ -404,6 +423,7 @@ p, h1, h2, h3, h4 {
   }
 
   &__link {
+    margin-left: 60px;
     border-radius: 5px;
     padding: 23px 27px;
     width: 198px;
@@ -413,9 +433,15 @@ p, h1, h2, h3, h4 {
     text-transform: uppercase;
     color: $white;
     background: $dark;
+    transition: background-color .3s;
     svg {
       margin-left: 23px;
+      color: $white;
     }
+  }
+
+  &__link:hover {
+    background: #49D0FF;
   }
 
   &__btn {
@@ -467,7 +493,20 @@ p, h1, h2, h3, h4 {
 @media (max-width: 576px) {
   .hero {
     &__slide {
+      padding-left: 20px;
+      padding-right: 20px;
       background-image: url("../img/hero.webp");
+    }
+
+    &__title {
+      max-width: 100%;
+      font-size: 25px;
+      line-height: 40px;
+    }
+  
+    &__text {
+      max-width: 100%;
+      font-size: 18px;
     }
   }
 }
@@ -480,7 +519,7 @@ p, h1, h2, h3, h4 {
 
 /* price */
 
-.price {
+.calculate {
   color: $white;
 
   &__container {
@@ -549,6 +588,13 @@ p, h1, h2, h3, h4 {
     margin-bottom: 67px;
   }
 
+  &__cube {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 230px;
+  }
+
   &__subtitle {
     margin-top: 13px;
     margin-bottom: 13px;
@@ -597,6 +643,10 @@ p, h1, h2, h3, h4 {
     margin-right: 212px;
   }
 
+  &__list:last-child {
+    width: 260px;
+  }
+
   &__margin-link:not(:last-child) {
     margin-bottom: 9px;
   }
@@ -634,6 +684,7 @@ p, h1, h2, h3, h4 {
   }
 
   &__form {
+    position: relative;
     border-bottom: 1px solid $white;
     margin-bottom: 15px;
     width: 268px;
@@ -655,6 +706,9 @@ p, h1, h2, h3, h4 {
   }
 
   &__btn {
+    position: absolute;
+    top: -8px;
+    right: 0;
     border: none;
     padding: 0;
     background: none;
@@ -681,5 +735,14 @@ p, h1, h2, h3, h4 {
   &__logo:focus,
   &__input:focus {
     outline: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    &__cube {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
